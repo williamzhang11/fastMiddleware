@@ -3,4 +3,4 @@
 
 |中间件|
 | :------ |
-| [kafka架构](src/main/java/com/xiu/fastmiddleware/kafka/README.MD)|
+| [kafka](src/main/java/com/xiu/fastmiddleware/kafka/README.MD)|
