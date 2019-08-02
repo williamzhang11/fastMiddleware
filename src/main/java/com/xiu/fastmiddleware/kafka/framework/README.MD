@@ -59,6 +59,15 @@ kafka集群为每个主题维护了分布式的分区（partition）日志文件
 下图topic有3个分区，每个分区偏移量从0开始，不同分区之间偏移量是独立的，不相互影响
 ![image](https://github.com/williamzhang11/fastMiddleware/blob/master/src/main/java/com/xiu/fastmiddleware/kafka/image/kafkapartition.png)
 
+(3)副本（replication）
+
+同一个partition会有多个,没有replication的情况，一旦broker宕机，其上所有partition的数据都不可被消费，同时producer也不能再将数据存于
+partition上。引入replication后，同一个partition可能有多个replication，这需要在这些replication之间选出一个leader,producer和
+consumer只与这个leader交互，其它replication作为follower从leader中复制数据。
+
+
+
+
 
 
 

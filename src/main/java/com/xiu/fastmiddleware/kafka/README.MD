@@ -6,6 +6,7 @@
 | :------ |
 | [kafka架构与工作流程](./framework/README.MD)|
 | [kafka为什么对topic进行分区](./partition/README.MD)|
+| [kafka如何保证高可用性](./ha/README.MD)|
 
 
 
