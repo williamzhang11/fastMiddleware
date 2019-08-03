@@ -7,6 +7,9 @@
 | [kafka架构与工作流程](./framework/README.MD)|
 | [kafka为什么对topic进行分区](./partition/README.MD)|
 | [kafka如何保证高可用性](./ha/README.MD)|
+| [kafka如何保证消息不被重复消费](./repeatpurchases/README.MD)|
+| [kafka如何保证消息的可靠性传输](./msgreliability/README.MD)|
+| [kafka如何保证消息的顺序性](./mqordering/README.MD)|
 
 
 
