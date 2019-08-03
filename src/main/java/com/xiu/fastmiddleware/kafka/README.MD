@@ -10,7 +10,8 @@
 | [kafka如何保证消息不被重复消费](./repeatpurchases/README.MD)|
 | [kafka如何保证消息的可靠性传输](./msgreliability/README.MD)|
 | [kafka如何保证消息的顺序性](./mqordering/README.MD)|
-
+| [kafka如何解决过期失效问题,消息挤压怎么处理,消息满了怎么处理](./mqfailure/README.MD)|
+| [kafka架构设计要点](./archdesign/README.MD)|
 
 
 
