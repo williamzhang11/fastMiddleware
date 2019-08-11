@@ -9,7 +9,7 @@
 	(4)数据压缩
 	(5)topic划分为多个partition,提高并行度.数据在磁盘存取速度为O(1)
 	
-## 负载均衡
+## 2.负载均衡
 
 	1、Producer 根据用户指定的算法，将消息发送到指定的 Partition 中。
 	2、Topic 存在多个 Partition ，每个 Partition 有自己的replica ，
@@ -17,7 +17,7 @@
 	partition ，Leader Partition 负责读写，并由 Zookeeper 负责 fail over 。
 	3、相同 Topic 的多个 Partition 会分配给不同的 Consumer 进行拉取消息，进行消费。
 	
-## 拉取系统
+## 3.拉取系统
 
 由于 Kafka Broker 会持久化数据，Broker 没有内存压力，因此， 
 Consumer 非常适合采取 pull 的方式消费数据，具有以下几点好处：
@@ -26,7 +26,7 @@ Consumer 非常适合采取 pull 的方式消费数据，具有以下几点好�
 2、Consumer 根据消费能力自主控制消息拉取速度。
 3、Consumer 根据自身情况自主选择消费模式，例如批量，重复消费，从尾端开始消费等
 
-## 可扩展性
+## 4.可扩展性
 
 	通过 Zookeeper 管理 Broker 与 Consumer 的动态加入与离开。
 
