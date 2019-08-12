@@ -112,6 +112,9 @@ redis集群采用无中心结构，特点：
 
 体量较小时，选择 Redis Sentinel ，单主 Redis 足以支撑业务。
 体量较大时，选择 Redis Cluster ，通过分片，使用更多内存。
+
+Redis Sentinel 着眼于高可用，在 master 宕机时会自动将 slave 提升为 master ，继续提供服务。
+Redis Cluster 着眼于扩展性与高可用，在单个 Redis 内存不足时，使用Cluster 进行分片存储。
 	
 	
 	
