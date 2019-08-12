@@ -10,6 +10,7 @@
 | [redis有几种数据“过期”策略](./redisexpire/README.MD)|
 | [redis有哪几种数据“淘汰”策略](./redisout/README.MD)|
 | [redis事务](./redistransaction/README.MD)|
+| [redis的3种集群化方案](./rediscluster/README.MD)|
 
 
 
