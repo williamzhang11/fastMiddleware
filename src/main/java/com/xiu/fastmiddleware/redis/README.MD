@@ -11,6 +11,7 @@
 | [redis有哪几种数据“淘汰”策略](./redisout/README.MD)|
 | [redis事务](./redistransaction/README.MD)|
 | [redis的3种集群化方案](./rediscluster/README.MD)|
+| [redis的哨兵模式与集群模式比较](./redisclusterdiff/README.MD)|
 
 
 
