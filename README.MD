@@ -6,4 +6,4 @@
 | [kafka](src/main/java/com/xiu/fastmiddleware/kafka/README.MD)|
 | [redis](src/main/java/com/xiu/fastmiddleware/redis/README.MD)|
 | [zookeeper](src/main/java/com/xiu/fastmiddleware/zookeeper/README.MD)|
-| [nginx](src/main/java/com/xiu/fastmiddleware/zookeeper/README.MD)|
+| [nginx](src/main/java/com/xiu/fastmiddleware/nginx/README.MD)|
