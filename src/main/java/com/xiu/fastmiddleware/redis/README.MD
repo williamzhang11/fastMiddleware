@@ -14,6 +14,7 @@
 | [redis的哨兵模式与集群模式比较](./redisclusterdiff/README.MD)|
 | [redis性能优化](./redisperformanceoptimization/README.MD)|
 | [redis生产环境的部署](./redisproduct/README.MD)|
+| [数据分片三种方案](./datasharding/README.MD)|
 
 
 

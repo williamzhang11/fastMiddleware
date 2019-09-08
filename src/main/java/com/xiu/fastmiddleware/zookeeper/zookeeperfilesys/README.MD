@@ -7,11 +7,19 @@ zookeeper提供了
 
 ## Zookeeper 的文件系统是什么
 
-Zookeeper 提供一个多层级的节点命名空间(节点称为 znode)。与文件系统不同的是，这些节点
-都可以设置关联的数据，而文件系统中只有文件节点可以存放数据而目录节点不行。
+Zookeeper 提供一个多层级的节点命名空间(节点称为 znode)。一个znode节点可以包含子znode,同时也可以包含数据
+
+zk的文件系统和Linux的文件系统目录结构一样，从"/"开始
+
+zk的访问路径只有绝对路径，没有相对路径。
+
+zk中没有文件和目录的概念，只有znode节点，Znode既有文件的功能，又有目录的功能
 
 Zookeeper 为了保证高吞吐和低延迟，在内存中维护了这个树状的目录结构，这种特性使得 Zookeeper
  不能用于存放大量的数据，每个节点的存放数据上限为 1M 
+ 
+ 
+https://blog.csdn.net/qichangjian/article/details/88184705
  
 ### Zookeeper 有哪几种节点类型
 
@@ -31,6 +39,18 @@ Zookeeper 为了保证高吞吐和低延迟，在内存中维护了这个树状�
 
 基本特性同临时节点，增加了顺序属性，节点名后边会追加一个由父节点维护的自增整型数字
 
+zookeeper的znode的相关特点：
+
+创建znode时设置顺序标识，znode名称后会附加一个值，顺序号是一个单调递增的计数器，由父节点维护。（无论创建的是否是有编号节点，都为顺序递增）
+
+EPHEMERAL 临时类型的节点不能有子节点
+
+对于zk来说，它的znode中储存的数据不能超过1M，最好不要超过1KB，如果数据量比较大，很难保证数据的一致性
+
+对于zk来说，有几个节点数据就会存储几份
+
+
+
 
 ## Zookeeper 的通知机制是什么
 
@@ -43,6 +63,17 @@ Zookeeper 允许客户端向服务端的某个 znode 注册一个 Watcher 监听
 第二步，服务端处理 Watcher 。
 
 第三步，客户端回调 Watcher 。
+
+触发的四种方式：
+
+```
+Znode的创建----nodeCreated
+Znode 被删除---nodeDelete
+Znode的数据变化---nodedatachanged
+Znode的子节点的变化----nodeChildrenchange
+```
+监听只生效一次
+
 
 ## Zookeeper 的会话管理是怎么样的
 
