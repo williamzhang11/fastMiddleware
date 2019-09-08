@@ -19,8 +19,8 @@
 	
 ## 3.拉取系统
 
-由于 Kafka Broker 会持久化数据，Broker 没有内存压力，因此， 
-Consumer 非常适合采取 pull 的方式消费数据，具有以下几点好处：
+由于 Kafka Broker会持久化数据，Broker没有内存压力，因此， 
+Consumer非常适合采取 pull的方式消费数据，具有以下几点好处：
 
 1、简化 Kafka 设计。
 2、Consumer 根据消费能力自主控制消息拉取速度。
@@ -28,12 +28,12 @@ Consumer 非常适合采取 pull 的方式消费数据，具有以下几点好�
 
 ## 4.可扩展性
 
-	通过 Zookeeper 管理 Broker 与 Consumer 的动态加入与离开。
+	通过 Zookeeper管理 Broker与 Consumer 的动态加入与离开。
 
-	当需要增加 Broker 节点时，新增的 Broker 会向 Zookeeper 注册，而 Producer 
-	及 Consumer 会根据注册在 Zookeeper 	上的 watcher 感知这些变化，并及时作出调整。
+	当需要增加 Broker节点时，新增的 Broker会向 Zookeeper注册，而 Producer 
+	及 Consumer 会根据注册在 Zookeeper上的 watcher感知这些变化，并及时作出调整。
 	
-	当新增和删除 Consumer 节点时，相同 Topic 的多个 Partition 会分配给剩余的 Consumer 们。
+	当新增和删除 Consumer节点时，相同 Topic的多个 Partition会分配给剩余的 Consumer们。
 
 
 
