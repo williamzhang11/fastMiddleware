@@ -19,7 +19,7 @@
 比如redis查一下，之前消费过没，如果没消费过，就处理，然后写redis。
 如果消费过了，就不用处理了。
 
-![image](https://github.com/williamzhang11/fastMiddleware/blob/master/src/main/java/com/xiu/fastmiddleware/kafka/image/repeat.jpg)
+![image](https://github.com/williamzhang11/fastMiddleware/blob/master/src/main/java/com/xiu/fastmiddleware/kafka/image/repeat.JPG)
 
 
 
