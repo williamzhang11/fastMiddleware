@@ -6,8 +6,8 @@ redis底层有6种数据结构，分别是简单动态字符串(SDS),链表，�
 
 每种数据类型都有着2种以上的数据结构实现，在不同状态下会进行数据结构的转换
 
-
-## 简单动态字符串(SDS)
+![image](https://github.com/williamzhang11/fastMiddleware/blob/master/src/main/java/com/xiu/fastmiddleware/image/redis.JPG)
+## 简单动态字符串(SDS)---String
 
 Redis 是用 C 语言写的，但是对于Redis的字符串，却不是 C 语言中的字符串（即以空字符’\0’结尾的字符数组），它是自己构建了一种名为 简单动态字符串（simple dynamic string,SDS）的抽象类型，并将 SDS 作为 Redis的默认字符串表示。
 
@@ -24,17 +24,15 @@ Redis 是用 C 语言写的，但是对于Redis的字符串，却不是 C 语言
 	(1)常数复杂度获取字符串长度
 	(2)杜绝缓冲区溢出
 
-## 双端链表
 
-C 语言内部是没有内置这种数据结构的实现，所以Redis自己构建了链表的实现
 
-## 字典
+## 字典  ---hash
 
 字典又称为符号表或者关联数组、或映射（map），是一种用于保存键值对的抽象数据结构。字典中的每一个键 key 都是唯一的，通过 key 可以对值来进行查找或修改。C 语言中没有内置这种数据结构的实现，所以字典依然是 Redis自己构建的
 
 Redis 的字典使用哈希表作为底层实现(类似hashmap,链地址法解决哈希冲突)
 
-## 跳跃表
+## 跳跃表 ---zset
 
 跳表是一种随机化的数据结构	。它的效率和红黑树以及 AVL 树不相上下。它的效率和红黑树以及 AVL 树不相上下
 
@@ -81,7 +79,20 @@ typedef struct intset{
 
 压缩列表的原理：压缩列表并不是对数据利用某种算法进行压缩，而是将数据按照一定规则编码在一块连续的内存区域，目的是节省内存。
 
+## 双端链表
 
+C 语言内部是没有内置这种数据结构的实现，所以Redis自己构建了链表的实现
+
+
+## 快速列表(quickList)  --List
+
+　quickList 是 zipList 和 linkedList 的混合体，它将 linkedList 按段切分，每一段使用 zipList 来紧凑存储，多个 zipList 之间使用双向指针串接起来。
+
+![image](https://github.com/williamzhang11/fastMiddleware/blob/master/src/main/java/com/xiu/fastmiddleware/image/quicklist.png)
+
+## --- set 
+
+底层使用了intset和hashtable两种数据结构存储的，intset我们可以理解为数组，hashtable就是普通的哈希表（key为set的值，value为null）
 
 
 
